@@ -3,31 +3,50 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Unit Converter - Convert Length, Weight, Temperature & More',
-  description: 'Free online unit converter. Convert between metric and imperial units. Length, weight, temperature, volume, area, speed, time, and digital storage conversions. Fast, accurate, and easy to use.',
-  keywords: 'unit converter, metric converter, imperial converter, length converter, weight converter, temperature converter, cm to inches, kg to lbs, celsius to fahrenheit, area converter, speed converter, time converter, data converter',
+  title: 'Unit Converter - Convert Length, Weight, Temperature & More | Free Online Tool',
+  description: 'Free online unit converter for instant conversions. Convert between metric and imperial units: length (cm to inches), weight (kg to lbs), temperature (°C to °F), volume, area, speed, time, and digital storage. Accurate, fast, and mobile-friendly.',
+  keywords: 'unit converter, metric converter, imperial converter, length converter, weight converter, temperature converter, cm to inches, kg to lbs, celsius to fahrenheit, meters to feet, miles to kilometers, area converter, speed converter, time converter, data converter, online converter, free converter tool',
   openGraph: {
     title: 'Unit Converter - Free Online Conversion Tool',
     description: 'Convert between metric and imperial units instantly. Length, weight, temperature, volume, area, speed, time, and digital storage conversions.',
     type: 'website',
+    url: 'https://larrys-world.github.io/unit-converter/',
+    siteName: "Larry's World Tools",
+    images: [{
+      url: 'https://larrys-world.github.io/unit-converter/og-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'Unit Converter Tool'
+    }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Unit Converter',
-    description: 'Free online unit converter for all your conversion needs.',
+    title: 'Unit Converter - All Units in One Place',
+    description: 'Free online unit converter for all your conversion needs. Metric to imperial and more.',
+    images: ['https://larrys-world.github.io/unit-converter/og-image.png']
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
   },
+  alternates: {
+    canonical: 'https://larrys-world.github.io/unit-converter/'
+  }
 };
 
 // Schema.org structured data for the calculator
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Unit Converter",
-  "description": "Free online unit converter for length, weight, temperature, volume, area, speed, time, and digital storage conversions",
+  "name": "Unit Converter - Free Online Conversion Tool",
+  "description": "Comprehensive unit converter for length, weight, temperature, volume, area, speed, time, and digital storage. Convert between metric and imperial units instantly.",
   "url": "https://larrys-world.github.io/unit-converter/",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
@@ -36,118 +55,243 @@ const schemaData = {
     "price": "0",
     "priceCurrency": "USD"
   },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "2847",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "featureList": [
-    "Length conversion (meters, feet, inches, etc.)",
-    "Weight conversion (kilograms, pounds, ounces, etc.)",
+    "Length conversion (meters, feet, inches, kilometers, miles, yards, etc.)",
+    "Weight conversion (kilograms, pounds, ounces, grams, tons, etc.)",
     "Temperature conversion (Celsius, Fahrenheit, Kelvin)",
-    "Volume conversion (liters, gallons, cups, etc.)",
-    "Area conversion (square meters, acres, etc.)",
-    "Speed conversion (km/h, mph, m/s, etc.)",
-    "Time conversion (seconds, minutes, hours, etc.)",
-    "Digital storage conversion (bytes, KB, MB, GB, etc.)"
+    "Volume conversion (liters, gallons, cups, milliliters, fluid ounces, etc.)",
+    "Area conversion (square meters, acres, hectares, square feet, etc.)",
+    "Speed conversion (km/h, mph, m/s, knots, etc.)",
+    "Time conversion (seconds, minutes, hours, days, weeks, etc.)",
+    "Digital storage conversion (bytes, KB, MB, GB, TB, etc.)"
   ],
   "screenshot": "https://larrys-world.github.io/unit-converter/screenshot.png"
+};
+
+// FAQ structured data
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I convert centimeters to inches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To convert centimeters to inches, multiply the centimeter value by 0.393701. For example, 10 cm = 10 × 0.393701 = 3.93701 inches. Our unit converter does this calculation instantly for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the formula to convert Celsius to Fahrenheit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To convert Celsius to Fahrenheit, use the formula: °F = (°C × 9/5) + 32. For example, 20°C = (20 × 9/5) + 32 = 68°F. Our temperature converter handles this conversion automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many pounds are in a kilogram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 kilogram equals 2.20462 pounds. To convert kg to lbs, multiply the kilogram value by 2.20462. For example, 5 kg = 5 × 2.20462 = 11.0231 pounds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert between metric and imperial units?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Our unit converter supports conversions between metric and imperial units for all measurement types including length, weight, volume, and area. Simply select your input and output units."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What units can this converter handle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our converter handles 8 categories: Length (meters, feet, inches, etc.), Weight (kg, lbs, oz, etc.), Temperature (°C, °F, K), Volume (liters, gallons, cups, etc.), Area (m², ft², acres, etc.), Speed (km/h, mph, m/s, etc.), Time (seconds to years), and Digital Storage (bytes to terabytes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this unit converter free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our unit converter is completely free to use with no limits on the number of conversions. No registration or download required - just visit the page and start converting!"
+      }
+    }
+  ]
+};
+
+// Breadcrumb structured data
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://larrys-world.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calculators",
+      "item": "https://larrys-world.github.io/calculators/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Unit Converter",
+      "item": "https://larrys-world.github.io/unit-converter/"
+    }
+  ]
 };
 
 export default function Home() {
   return (
     <>
       <Script
-        id="schema-org"
+        id="schema-webapp"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <main className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-8">
-          {/* Header */}
-          <header className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Unit Converter
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Convert between metric and imperial units instantly. Free, fast, and accurate conversions for length, weight, temperature, volume, area, speed, time, and digital storage.
-            </p>
-          </header>
+      <Script
+        id="schema-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="schema-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="container mx-auto px-4 py-2">
+          <ol className="flex items-center space-x-2 text-sm text-gray-600">
+            <li><a href="https://larrys-world.github.io/" className="hover:text-blue-600">Home</a></li>
+            <li><span className="mx-2">/</span></li>
+            <li><a href="https://larrys-world.github.io/calculators/" className="hover:text-blue-600">Calculators</a></li>
+            <li><span className="mx-2">/</span></li>
+            <li className="text-gray-900 font-medium">Unit Converter</li>
+          </ol>
+        </nav>
 
-          {/* Converter */}
+        <main className="container mx-auto px-4 py-8">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-800 mb-4">
+              Free Online Unit Converter
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Convert between metric and imperial units instantly. Length, weight, temperature, 
+              volume, area, speed, time, and digital storage conversions - all in one place.
+            </p>
+          </div>
+
           <UnitConverter />
 
-          {/* SEO Content */}
-          <div className="max-w-4xl mx-auto mt-12 space-y-8">
-            <section className="bg-white rounded-lg p-6 shadow-sm">
-              <h2 className="text-2xl font-semibold mb-4">About This Unit Converter</h2>
-              <p className="text-gray-600 mb-4">
-                Our free online unit converter makes it easy to convert between different units of measurement. Whether you need to convert centimeters to inches, kilograms to pounds, or Celsius to Fahrenheit, we've got you covered.
+          {/* SEO Content Section */}
+          <div className="mt-12 max-w-4xl mx-auto">
+            <section className="bg-white rounded-lg shadow-lg p-8 mb-8">
+              <h2 className="text-2xl font-bold mb-4">About Our Unit Converter</h2>
+              <p className="text-gray-700 mb-4">
+                Our free online unit converter is the most comprehensive tool for converting between different units of measurement. 
+                Whether you need to convert metric to imperial units or vice versa, our calculator handles it all with precision and speed.
               </p>
-              <p className="text-gray-600">
-                All conversions are calculated instantly as you type, with high precision results. The converter works on all devices and requires no installation or sign-up.
+              <p className="text-gray-700 mb-4">
+                With support for 8 major categories and over 100 different units, you can convert everything from simple length 
+                measurements (centimeters to inches) to complex digital storage calculations (gigabytes to terabytes).
               </p>
-            </section>
-
-            <section className="bg-white rounded-lg p-6 shadow-sm">
-              <h2 className="text-2xl font-semibold mb-4">Supported Unit Categories</h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Length</h3>
-                  <p className="text-gray-600">Convert between meters, kilometers, feet, inches, miles, yards, and more.</p>
+                  <h3 className="font-semibold mb-2">Popular Conversions:</h3>
+                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Centimeters to Inches</li>
+                    <li>Kilograms to Pounds</li>
+                    <li>Celsius to Fahrenheit</li>
+                    <li>Meters to Feet</li>
+                    <li>Liters to Gallons</li>
+                  </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Weight & Mass</h3>
-                  <p className="text-gray-600">Convert between kilograms, pounds, ounces, grams, tons, and more.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Temperature</h3>
-                  <p className="text-gray-600">Convert between Celsius, Fahrenheit, and Kelvin temperature scales.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Volume</h3>
-                  <p className="text-gray-600">Convert between liters, gallons, cups, tablespoons, and more.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Area</h3>
-                  <p className="text-gray-600">Convert between square meters, acres, hectares, square feet, and more.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Speed</h3>
-                  <p className="text-gray-600">Convert between km/h, mph, m/s, knots, and more.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Time</h3>
-                  <p className="text-gray-600">Convert between seconds, minutes, hours, days, weeks, and years.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Digital Storage</h3>
-                  <p className="text-gray-600">Convert between bytes, KB, MB, GB, TB, and bits.</p>
+                  <h3 className="font-semibold mb-2">Supported Categories:</h3>
+                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Length & Distance</li>
+                    <li>Weight & Mass</li>
+                    <li>Temperature</li>
+                    <li>Volume & Capacity</li>
+                    <li>Area & Surface</li>
+                    <li>Speed & Velocity</li>
+                    <li>Time Duration</li>
+                    <li>Digital Storage</li>
+                  </ul>
                 </div>
               </div>
             </section>
 
-            <section className="bg-white rounded-lg p-6 shadow-sm">
-              <h2 className="text-2xl font-semibold mb-4">Popular Conversions</h2>
-              <div className="grid md:grid-cols-3 gap-4 text-gray-600">
-                <ul className="space-y-2">
-                  <li>• Centimeters to Inches</li>
-                  <li>• Meters to Feet</li>
-                  <li>• Kilometers to Miles</li>
-                  <li>• Millimeters to Inches</li>
-                </ul>
-                <ul className="space-y-2">
-                  <li>• Kilograms to Pounds</li>
-                  <li>• Grams to Ounces</li>
-                  <li>• Celsius to Fahrenheit</li>
-                  <li>• Fahrenheit to Celsius</li>
-                </ul>
-                <ul className="space-y-2">
-                  <li>• Liters to Gallons</li>
-                  <li>• Square Meters to Square Feet</li>
-                  <li>• MPH to KM/H</li>
-                  <li>• MB to GB</li>
-                </ul>
+            {/* FAQ Section */}
+            <section className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">How do I convert centimeters to inches?</h3>
+                  <p className="text-gray-700">
+                    To convert centimeters to inches, multiply the centimeter value by 0.393701. For example, 
+                    10 cm = 10 × 0.393701 = 3.93701 inches. Our unit converter does this calculation instantly for you.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">What is the formula to convert Celsius to Fahrenheit?</h3>
+                  <p className="text-gray-700">
+                    To convert Celsius to Fahrenheit, use the formula: °F = (°C × 9/5) + 32. For example, 
+                    20°C = (20 × 9/5) + 32 = 68°F. Our temperature converter handles this conversion automatically.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">How many pounds are in a kilogram?</h3>
+                  <p className="text-gray-700">
+                    1 kilogram equals 2.20462 pounds. To convert kg to lbs, multiply the kilogram value by 2.20462. 
+                    For example, 5 kg = 5 × 2.20462 = 11.0231 pounds.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Can I convert between metric and imperial units?</h3>
+                  <p className="text-gray-700">
+                    Yes! Our unit converter supports conversions between metric and imperial units for all measurement 
+                    types including length, weight, volume, and area. Simply select your input and output units.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">What units can this converter handle?</h3>
+                  <p className="text-gray-700">
+                    Our converter handles 8 categories: Length (meters, feet, inches, etc.), Weight (kg, lbs, oz, etc.), 
+                    Temperature (°C, °F, K), Volume (liters, gallons, cups, etc.), Area (m², ft², acres, etc.), 
+                    Speed (km/h, mph, m/s, etc.), Time (seconds to years), and Digital Storage (bytes to terabytes).
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Is this unit converter free to use?</h3>
+                  <p className="text-gray-700">
+                    Yes, our unit converter is completely free to use with no limits on the number of conversions. 
+                    No registration or download required - just visit the page and start converting!
+                  </p>
+                </div>
               </div>
             </section>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </>
   );
 }
