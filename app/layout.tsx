@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "Unit Converter - Convert Length, Weight, Temperature & More",
     template: "%s | Unit Converter"
   },
-  description: "Free online unit converter. Convert between metric and imperial units. Fast, accurate, and easy to use.",
+  description: "Convert ANY unit instantly - length, weight, temperature, volume & more. 100+ conversions. Accurate, fast, free. No ads. Start converting now →",
   viewport: "width=device-width, initial-scale=1",
   themeColor: "#4F46E5",
 };
