@@ -242,8 +242,55 @@ export default function Home() {
               </div>
             </section>
 
-            <FAQ />
-            <RelatedTools />
+            {/* FAQ Section */}
+            <section className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">How do I convert centimeters to inches?</h3>
+                  <p className="text-gray-700">
+                    To convert centimeters to inches, multiply the centimeter value by 0.393701. For example, 
+                    10 cm = 10 × 0.393701 = 3.93701 inches. Our unit converter does this calculation instantly for you.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">What is the formula to convert Celsius to Fahrenheit?</h3>
+                  <p className="text-gray-700">
+                    To convert Celsius to Fahrenheit, use the formula: °F = (°C × 9/5) + 32. For example, 
+                    20°C = (20 × 9/5) + 32 = 68°F. Our temperature converter handles this conversion automatically.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">How many pounds are in a kilogram?</h3>
+                  <p className="text-gray-700">
+                    1 kilogram equals 2.20462 pounds. To convert kg to lbs, multiply the kilogram value by 2.20462. 
+                    For example, 5 kg = 5 × 2.20462 = 11.0231 pounds.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Can I convert between metric and imperial units?</h3>
+                  <p className="text-gray-700">
+                    Yes! Our unit converter supports conversions between metric and imperial units for all measurement 
+                    types including length, weight, volume, and area. Simply select your input and output units.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">What units can this converter handle?</h3>
+                  <p className="text-gray-700">
+                    Our converter handles 8 categories: Length (meters, feet, inches, etc.), Weight (kg, lbs, oz, etc.), 
+                    Temperature (°C, °F, K), Volume (liters, gallons, cups, etc.), Area (m², ft², acres, etc.), 
+                    Speed (km/h, mph, m/s, etc.), Time (seconds to years), and Digital Storage (bytes to terabytes).
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Is this unit converter free to use?</h3>
+                  <p className="text-gray-700">
+                    Yes, our unit converter is completely free to use with no limits on the number of conversions. 
+                    No registration or download required - just visit the page and start converting!
+                  </p>
+                </div>
+              </div>
+            <RelatedTools />            </section>
           </div>
         </main>
       </div>
